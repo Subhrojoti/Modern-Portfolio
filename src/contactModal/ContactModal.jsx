@@ -28,11 +28,8 @@ const ContactModal = ({ isOpen, setIsOpen }) => {
     if (!document.querySelector("df-messenger")) {
       const messenger = document.createElement("df-messenger");
       messenger.setAttribute("intent", "WELCOME");
-      messenger.setAttribute("chat-title", "SubhroAI");
-      messenger.setAttribute(
-        "agent-id",
-        "64bbebec-f485-44bf-b9d6-97a89a34a021"
-      );
+      messenger.setAttribute("chat-title", "Your_Bot Name");
+      messenger.setAttribute("agent-id", "Replace it with your agent-id");
       messenger.setAttribute("language-code", "en");
       document.body.appendChild(messenger); // Adds the df-messenger element
     }
@@ -69,8 +66,8 @@ const ContactModal = ({ isOpen, setIsOpen }) => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_vw8z543", "template_gkyrans", form.current, {
-        publicKey: "D6vLO1DPAW4xGLljo",
+      .sendForm("Your_service_key", "template_gkyrans", form.current, {
+        publicKey: "Your_public_key",
       })
       .then(
         () => {
